@@ -1,4 +1,4 @@
-FROM python:3.8-slim AS bot
+FROM python:3.11-slim AS bot
 
 ENV PYTHONFAULTHANDLER=1
 ENV PYTHONUNBUFFERED=1
@@ -12,7 +12,7 @@ ENV PIP_DEFAULT_TIMEOUT=100
 ENV TELEGRAM_TOKEN ${TELEGRAM_TOKEN}
 
 RUN apt-get update
-RUN apt-get install -y python3 python3-pip python-dev build-essential python3-venv
+RUN apt-get install -y python3 python3-pip build-essential python3-venv
 
 RUN mkdir -p /codebase /storage
 ADD . /codebase
